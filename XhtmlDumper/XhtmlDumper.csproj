@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="BasicXhtmlRenderer.cs" />
     <Compile Include="IXhtmlRenderer.cs" />
-    <Compile Include="ObjectDumperOld.cs" />
     <Compile Include="ObjectXhtmlRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
