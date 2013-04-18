@@ -10,6 +10,7 @@ How it Works
 The `XhtmlDumper` class uses several renderers to convert the object to XHTML, the renderers can be registered in the constructor of the dumper and are tried in order they are added. Each renderer can return `true` to indicate that the renderer successfully converted the object to XHTML, and that no further renderers should be tried, or it can return `false` to make it fall back to the next renderer in line.
 
 A renderer has to implement following interface:
+
     public interface IXhtmlRenderer
     {
         bool Render(object o, string description, int depth, XhtmlTextWriter writer);
