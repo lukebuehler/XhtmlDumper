@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XhtmlDumper", "XhtmlDumper\XhtmlDumper.csproj", "{024FD473-29F7-4F3C-B17C-BC03B9F75B05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XhtmlDumper.Tests", "XhtmlDumper.Tests\XhtmlDumper.Tests.csproj", "{F8CD1C0E-33A8-42B4-AC6F-C4C03460CE60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{024FD473-29F7-4F3C-B17C-BC03B9F75B05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024FD473-29F7-4F3C-B17C-BC03B9F75B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024FD473-29F7-4F3C-B17C-BC03B9F75B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024FD473-29F7-4F3C-B17C-BC03B9F75B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8CD1C0E-33A8-42B4-AC6F-C4C03460CE60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8CD1C0E-33A8-42B4-AC6F-C4C03460CE60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8CD1C0E-33A8-42B4-AC6F-C4C03460CE60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8CD1C0E-33A8-42B4-AC6F-C4C03460CE60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
