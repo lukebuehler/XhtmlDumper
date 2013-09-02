@@ -88,10 +88,10 @@ dd          { margin-left: 1.5em;}
 	on table cells has to be 27px, instead of the standard 18px or 36px 
 	of other elements. 
     */ 
-table       { margin-bottom: 1.4em; }
+table       { margin-bottom: 0.5em; }
 th          { font-weight: bold; }
 thead th    { background: #c3d9ff; }
-th,td,caption { padding: 4px 10px 4px 5px; }
+th,td,caption { padding: 2px 4px 2px 3px; }
 th.left     {text-align:left;}
 /*
 	You can zebra-stripe your tables in outdated browsers by adding 

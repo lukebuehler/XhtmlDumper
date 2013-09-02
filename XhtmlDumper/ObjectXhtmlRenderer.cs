@@ -20,7 +20,7 @@ namespace XhtmlDumper
 
             if(!String.IsNullOrWhiteSpace(description))
             {
-                writer.RenderBeginTag(HtmlTextWriterTag.H2);
+                writer.RenderBeginTag(HtmlTextWriterTag.H3);
                 writer.Write(description);
                 writer.RenderEndTag();
                 writer.WriteLine();
@@ -40,7 +40,7 @@ namespace XhtmlDumper
         {
             var objectType = o.GetType();
 
-            if(RenderAtomic(objectType))
+            if(IsSimpleType(objectType))
             {
                 writer.RenderBeginTag(HtmlTextWriterTag.P);
                 writer.Write(o.ToString());
@@ -97,7 +97,7 @@ namespace XhtmlDumper
             writer.RenderBeginTag(HtmlTextWriterTag.Table);
 
             //if the element type is an element that needs to be rendered atomically we use a different method 
-            if(RenderAtomic(elementType))
+            if(IsSimpleType(elementType))
             {
                 writer.RenderBeginTag(HtmlTextWriterTag.Tr);
                 writer.RenderBeginTag(HtmlTextWriterTag.Th);
@@ -124,6 +124,7 @@ namespace XhtmlDumper
                     writer.RenderEndTag();
                 }
                 writer.RenderEndTag(); //tr
+                writer.WriteLine();
 
                 //write all the members
                 foreach (var element in enumerable)
@@ -187,11 +188,7 @@ namespace XhtmlDumper
                 //todo: optional date time formatting
                 writer.Write(value);
             }
-            else if (valueType == typeof(string))
-            {
-                writer.Write(value);
-            }
-            else if (valueType.IsValueType || valueType.IsPrimitive)
+            else if (IsSimpleType(valueType))
             {
                 writer.Write(value);
             }
@@ -276,9 +273,14 @@ namespace XhtmlDumper
             return null;
         }
 
-        private static bool RenderAtomic(Type type)
+        private static bool IsSimpleType(Type type)
         {
-            return type == typeof (String);
+            return type.IsPrimitive ||
+                   type.IsValueType ||
+                   type == typeof(DateTime) ||
+                   type == typeof(DateTimeOffset) ||
+                   type == typeof(TimeSpan) ||
+                   type == typeof(string);
         }
     }
 }

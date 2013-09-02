@@ -54,9 +54,13 @@ namespace XhtmlDumper.Tests
             using (var dumper = new XhtmlDumper(s))
             {
                 dumper.WriteObject(list, null, 1);
-                dumper.WriteObject(o1, "First object", 1);
+                dumper.WriteObject(o1, "First object", 2);
 
                 dumper.WriteObject("a string", "", 1);
+                dumper.WriteObject(new[] { 1, 2, 3, 4 }, "", 1);
+                dumper.WriteObject(5.555, "", 1);
+                dumper.WriteObject(DateTime.Now, "", 1);
+                dumper.WriteObject(DateTimeOffset.Now, "", 1);
             }
         }
 
